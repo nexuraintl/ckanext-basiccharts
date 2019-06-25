@@ -23,7 +23,7 @@ ckan.module("basiccharts_view", function (jQuery) {
         chartType = self.options.chartType,
         resourceView = self.options.resourceView,
         params = setupParams(resourceView, chartType),
-        elementId = "#"+self.el.context.id,
+        elementId = "#" + self.el['0'].id,
         resource = {
           id: self.options.resourceId,
           endpoint: endpoint
@@ -49,8 +49,8 @@ ckan.module("basiccharts_view", function (jQuery) {
 
         // Sort by groupBy
         if (params.group_by) {
-          var aGroupBy = a[params.group_by],
-              bGroupBy = b[params.group_by],
+          var aGroupBy = '' + a[params.group_by],
+              bGroupBy = '' + b[params.group_by],
               result = aGroupBy.localeCompare(bGroupBy);
 
           if (result !== 0) {
